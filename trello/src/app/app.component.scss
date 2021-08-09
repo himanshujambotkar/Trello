@@ -1,0 +1,26 @@
+//Global Styles
+.flex-container {
+  display: flex;
+  flex-basis: 100%;
+  flex-flow: row;
+  .left-nav {
+    flex-basis: 15%;
+    height: 100vh;
+    overflow: auto;
+    padding: 0 20px;
+    margin-top: 20px;
+    color: #778CA2;
+    @media (max-width: 991px) {
+      display: none;
+    }
+  }
+  .right-nav {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 85%;
+    border-left: 1px solid #E8ECEF;
+    @media (max-width: 991px) {
+      flex-basis: 100%;
+    }
+  }
+}

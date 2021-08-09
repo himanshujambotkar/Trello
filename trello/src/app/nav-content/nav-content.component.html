@@ -1,0 +1,53 @@
+<div class="content">
+  <div class="filters">
+    <div class="select-project">
+      <img src="../assets/images/sprite_image.svg#svgView(viewBox(215, 62, 11, 17))" class="project-icon" alt="Project Icon" />
+      <span class="project-title">Project:</span>
+      <h3>spotify website deign
+        <img src="../assets/images/sprite_image.svg#svgView(viewBox(68.38, 94, 18, 17))" class="dropdown-icon"  alt="Dropdown" />
+      </h3>
+    </div>
+
+    <div class="users">
+      <img src="../assets/images/sprite_image.svg#svgView(viewBox(0, 0, 32, 32))" class="user-1-icon" alt="User Icon" />
+      <img src="../assets/images/sprite_image.svg#svgView(viewBox(41, 0, 32, 32))" class="user-2-icon" alt="User Icon" />
+      <img src="../assets/images/sprite_image.svg#svgView(viewBox(81, 0, 32, 32))" class="user-3-icon" alt="User Icon" />
+      <img src="../assets/images/sprite_image.svg#svgView(viewBox(121, 0, 32, 32))" class="user-4-icon" alt="User Icon" />
+
+      <img src="../assets/images/sprite_image.svg#svgView(viewBox(272.81, 101, 13, 13))" class="add-user-icon" alt="Add Icon" />
+    </div>
+  </div>
+
+  <div cdkDropListGroup class="cards-sections">
+    <div cdkDropList
+        [cdkDropListData]="tasks[i].cards"
+        class="tasks-sections"
+        (cdkDropListDropped)="drop($event, i)" *ngFor="let list of tasks; let i=index">
+      <div class="card-header">
+        <div class="{{list.class}}">{{list.name}}</div>
+        <a>
+          <img src="../assets/images/sprite_image.svg#svgView(viewBox(31, 94, 18, 17))" alt="More Icon" class="more-icon">
+        </a>
+      </div>
+      <div class="card" *ngFor="let item of list.cards" cdkDrag>
+        <h3>{{item.title}}</h3>
+        <div class="d-flex">
+          <div class="align-center d-flex mr-20">
+            <img src="../assets/images/icon_date.svg" class="date pr-6" alt="Tasks" />
+            <span>{{item.storypoints}}</span>
+          </div>
+          <div class="align-center d-flex mr-20">
+            <img src="../assets/images/icon_tasks.svg" class="tasks pr-6" alt="calendar" />
+            <span>{{item.deadline}}</span>
+          </div>
+        </div>
+      </div>
+
+      <button class="add-card" (click)="openDialog()">
+        <img src="../assets/images/sprite_image.svg#svgView(viewBox(238, 63, 11, 17))" class="plus-icon" alt="Add Card Icon" />
+        <span>ADD A CARD</span>
+      </button>
+    </div>
+  </div>
+
+</div>

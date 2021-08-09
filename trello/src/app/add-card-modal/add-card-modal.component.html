@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Add a card</h1>
+
+<div mat-dialog-content>
+  <div>
+    <label>Task name:</label>
+    <input type="text" placeholder="Enter task name" />
+  </div>
+
+  <div>
+    <label>Task name:</label>
+    <input type="text" placeholder="Enter storypoints" />
+  </div>
+
+  <div>
+    <label>Deadline:</label>
+    <span>
+      <input class="date-picker" matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </span>
+  </div>
+</div>
+
+<mat-dialog-actions align="end">
+  <button class="create-card" type="button">Create card</button>
+  <a class="close-modal" mat-dialog-close>Close</a>
+</mat-dialog-actions>

@@ -16,6 +16,7 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatNativeDateModule} from "@angular/material/core";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -28,17 +29,18 @@ import {MatNativeDateModule} from "@angular/material/core";
     NavContentComponent,
     AddCardModalComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    DragDropModule,
-    MatDialogModule,
-    BrowserAnimationsModule,
-    MatDatepickerModule,
-    MatIconModule,
-    MatInputModule,
-    MatNativeDateModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        DragDropModule,
+        MatDialogModule,
+        BrowserAnimationsModule,
+        MatDatepickerModule,
+        MatIconModule,
+        MatInputModule,
+        MatNativeDateModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

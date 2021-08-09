@@ -27,3 +27,13 @@
     font-weight: 500;
   }
 }
+.error {
+  font-weight: 500;
+  border: 1px solid transparent;
+  background-color: #ffe9e9;
+  color: #151317;
+  border-left: 4px solid red;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+}

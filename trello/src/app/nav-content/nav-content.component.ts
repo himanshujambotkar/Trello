@@ -11,8 +11,9 @@ import { Tasks, List, Card } from '../models/card.model';
 })
 export class NavContentComponent implements OnInit {
   tasks: any[] = [];
+  obj: any[] = [];
 
-  openDialog() {
+  openDialog(obj) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
@@ -21,6 +22,7 @@ export class NavContentComponent implements OnInit {
     this.dialog.open(AddCardModalComponent, {
       width: '480px',
       height: '360px',
+      data: obj.class,
     });
   };
 

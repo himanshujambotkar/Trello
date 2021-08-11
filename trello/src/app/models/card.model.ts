@@ -1,13 +1,13 @@
 export interface Tasks extends Array<List> {}
 
 export interface List {
+  name:string;
   class:string;
-  deadline:string;
   cards: Card[];
 }
 
 export interface Card {
-  class:string;
-  deadline:string;
-  storypoints:string;
+  title: string;
+  deadline: string;
+  storypoints: string;
 }

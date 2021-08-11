@@ -1,5 +1,7 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
+import {formatDate} from "@angular/common";
+import { CardService} from "../services/card.service";
 
 @Component({
   selector: 'app-add-card-modal',
@@ -7,20 +9,40 @@ import {MAT_DIALOG_DATA} from "@angular/material/dialog";
   styleUrls: ['./add-card-modal.component.scss']
 })
 export class AddCardModalComponent implements OnInit {
-  taskName:any[] = [];
-  storyPoints:any[] = [];
-  deadlineDate:any[] = [];
+  taskName:string[] = [];
+  storyPoints:string[] = [];
+  deadlineDate:string[] = [];
   showError: boolean = false;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public dataClass: object) {
+  constructor(@Inject(MAT_DIALOG_DATA) public dataClass: string, private cardService:CardService,
+              private dialogRef: MatDialogRef<AddCardModalComponent>) {
   }
 
   ngOnInit(): void {
   }
 
+  closeDialog(){
+    this.dialogRef.close();
+  }
+
   createCard = (taskName, storyPoints, deadlineDate) => {
     if(taskName.length !== 0 && storyPoints.length !== 0 && deadlineDate.length !== 0){
-      console.log(taskName, storyPoints, deadlineDate, this.dataClass);
+      const format = 'dd/MM/yyyy';
+      const myDate = deadlineDate;
+      const locale = 'en-US';
+      const deadlineFormattedDate = formatDate(myDate, format, locale);
+
+      let cards =  this.cardService.getTasksData();
+      let listIndex;
+
+      for(let [i,list] of cards.entries()) {
+        if (cards[i].class == this.dataClass) {
+          listIndex = i;
+          break;
+        }
+      }
+      this.closeDialog();
+      this.cardService.updateCard(listIndex,taskName,storyPoints, deadlineFormattedDate);
       return;
     } else {
       this.showError = true;

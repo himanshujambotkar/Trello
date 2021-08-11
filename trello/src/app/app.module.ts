@@ -17,7 +17,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatNativeDateModule} from "@angular/material/core";
 import {FormsModule} from "@angular/forms";
-
+import {CardService} from "./services/card.service";
 
 @NgModule({
   declarations: [
@@ -41,7 +41,9 @@ import {FormsModule} from "@angular/forms";
         MatNativeDateModule,
         FormsModule
     ],
-  providers: [],
+  providers: [
+    CardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

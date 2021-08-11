@@ -10,7 +10,7 @@
   </div>
 
   <div>
-    <label>Task name:</label>
+    <label>Storypoints:</label>
     <input type="text" placeholder="Enter storypoints" [(ngModel)]="storyPoints" />
   </div>
 
@@ -26,5 +26,5 @@
 
 <mat-dialog-actions>
   <button class="create-card" type="button" (click)="createCard(taskName, storyPoints, deadlineDate)">Create card</button>
-  <a class="close-modal" mat-dialog-close>Close</a>
+  <a class="close-modal" (click)="closeDialog()" mat-dialog-close>Close</a>
 </mat-dialog-actions>

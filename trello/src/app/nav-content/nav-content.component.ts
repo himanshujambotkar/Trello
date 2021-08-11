@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import {MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import {AddCardModalComponent} from "../add-card-modal/add-card-modal.component";
-import { Tasks, Card } from '../models/card.model';
+import { Card } from '../models/card.model';
 import { CardService} from "../services/card.service";
 
 @Component({

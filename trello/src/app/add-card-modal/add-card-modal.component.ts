@@ -42,7 +42,9 @@ export class AddCardModalComponent implements OnInit {
         }
       }
       this.closeDialog();
-      this.cardService.updateCard(listIndex,taskName,storyPoints, deadlineFormattedDate);
+      if(listIndex) {
+        this.cardService.updateCard(listIndex, taskName, storyPoints, deadlineFormattedDate);
+      }
       return;
     } else {
       this.showError = true;

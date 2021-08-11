@@ -1,6 +1,6 @@
 import { tasks } from "../models/data";
 import {Injectable} from "@angular/core";
-import { Tasks, Card } from "../models/card.model";
+import { Tasks } from "../models/card.model";
 
 @Injectable()
 
